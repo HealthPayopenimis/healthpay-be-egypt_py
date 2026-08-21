@@ -6,16 +6,16 @@ FIXTURE = os.path.join(os.path.dirname(__file__), "..", "fixtures", "governorate
 
 
 def seed_language_ar(apps, schema_editor):
-    """Register Arabic with RTL flag in the core Language table."""
+    """Register Arabic in the core Language table.
+
+    NOTE: no raw RTL-flag UPDATE here. The PostgreSQL port of tblLanguages has
+    no LanguageRTL column (MSSQL-era), and a failed statement aborts the whole
+    migration transaction on PostgreSQL even when caught. RTL direction is
+    driven by the frontend locale config ('ar' entry in openimis.json).
+    """
     Language = apps.get_model("core", "Language")
     if not Language.objects.filter(code="ar").exists():
         Language.objects.create(code="ar", name="العربية", sort_order=1)
-        # Set RTL flag directly (column from legacy schema: LanguageRTL / alt_language)
-        with schema_editor.connection.cursor() as c:
-            try:
-                c.execute("UPDATE \"tblLanguages\" SET \"LanguageRTL\" = TRUE WHERE \"LanguageCode\" = 'ar'")
-            except Exception:
-                pass  # column name varies by DB flavor; handled in be-core config
 
 
 def seed_governorates(apps, schema_editor):

@@ -7,5 +7,6 @@ setup(
     license="AGPL-3.0-only",
     packages=find_packages(),
     include_package_data=True,
+    package_data={"egypt_localization": ["fixtures/*.json"]},
     install_requires=["django"],
 )
