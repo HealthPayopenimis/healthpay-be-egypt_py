@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: healthpay-be-egypt
+Version: 1.0.0
+Summary: HealthPay Payer System - Egypt localization: National ID, governorates, EGP, phone validation
+License: AGPL-3.0-only
+License-File: LICENSE.md

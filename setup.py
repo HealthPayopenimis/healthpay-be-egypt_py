@@ -8,5 +8,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     package_data={"egypt_localization": ["fixtures/*.json"]},
+    # management/ subpackages are picked up by find_packages()
     install_requires=["django"],
 )

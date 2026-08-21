@@ -1,0 +1,38 @@
+{
+  "_comment": "Egypt's 27 governorates mapped onto the openIMIS location hierarchy: Region=Governorate (المحافظة), District=Markaz (المركز), Ward=City/Qism (المدينة/القسم), Village=Sheyakha (الشياخة). Codes follow the National ID governorate codes where they exist.",
+  "hierarchy_labels": {
+    "R": {"en": "Governorate", "ar": "المحافظة"},
+    "D": {"en": "Markaz", "ar": "المركز"},
+    "W": {"en": "City / Qism", "ar": "المدينة / القسم"},
+    "V": {"en": "Sheyakha / Village", "ar": "الشياخة / القرية"}
+  },
+  "governorates": [
+    {"code": "EG-01", "nid_code": "01", "name_en": "Cairo", "name_ar": "القاهرة", "capital_ar": "القاهرة"},
+    {"code": "EG-02", "nid_code": "02", "name_en": "Alexandria", "name_ar": "الإسكندرية", "capital_ar": "الإسكندرية"},
+    {"code": "EG-03", "nid_code": "03", "name_en": "Port Said", "name_ar": "بورسعيد", "capital_ar": "بورسعيد"},
+    {"code": "EG-04", "nid_code": "04", "name_en": "Suez", "name_ar": "السويس", "capital_ar": "السويس"},
+    {"code": "EG-11", "nid_code": "11", "name_en": "Damietta", "name_ar": "دمياط", "capital_ar": "دمياط"},
+    {"code": "EG-12", "nid_code": "12", "name_en": "Dakahlia", "name_ar": "الدقهلية", "capital_ar": "المنصورة"},
+    {"code": "EG-13", "nid_code": "13", "name_en": "Sharqia", "name_ar": "الشرقية", "capital_ar": "الزقازيق"},
+    {"code": "EG-14", "nid_code": "14", "name_en": "Qalyubia", "name_ar": "القليوبية", "capital_ar": "بنها"},
+    {"code": "EG-15", "nid_code": "15", "name_en": "Kafr El Sheikh", "name_ar": "كفر الشيخ", "capital_ar": "كفر الشيخ"},
+    {"code": "EG-16", "nid_code": "16", "name_en": "Gharbia", "name_ar": "الغربية", "capital_ar": "طنطا"},
+    {"code": "EG-17", "nid_code": "17", "name_en": "Monufia", "name_ar": "المنوفية", "capital_ar": "شبين الكوم"},
+    {"code": "EG-18", "nid_code": "18", "name_en": "Beheira", "name_ar": "البحيرة", "capital_ar": "دمنهور"},
+    {"code": "EG-19", "nid_code": "19", "name_en": "Ismailia", "name_ar": "الإسماعيلية", "capital_ar": "الإسماعيلية"},
+    {"code": "EG-21", "nid_code": "21", "name_en": "Giza", "name_ar": "الجيزة", "capital_ar": "الجيزة"},
+    {"code": "EG-22", "nid_code": "22", "name_en": "Beni Suef", "name_ar": "بني سويف", "capital_ar": "بني سويف"},
+    {"code": "EG-23", "nid_code": "23", "name_en": "Faiyum", "name_ar": "الفيوم", "capital_ar": "الفيوم"},
+    {"code": "EG-24", "nid_code": "24", "name_en": "Minya", "name_ar": "المنيا", "capital_ar": "المنيا"},
+    {"code": "EG-25", "nid_code": "25", "name_en": "Assiut", "name_ar": "أسيوط", "capital_ar": "أسيوط"},
+    {"code": "EG-26", "nid_code": "26", "name_en": "Sohag", "name_ar": "سوهاج", "capital_ar": "سوهاج"},
+    {"code": "EG-27", "nid_code": "27", "name_en": "Qena", "name_ar": "قنا", "capital_ar": "قنا"},
+    {"code": "EG-28", "nid_code": "28", "name_en": "Aswan", "name_ar": "أسوان", "capital_ar": "أسوان"},
+    {"code": "EG-29", "nid_code": "29", "name_en": "Luxor", "name_ar": "الأقصر", "capital_ar": "الأقصر"},
+    {"code": "EG-31", "nid_code": "31", "name_en": "Red Sea", "name_ar": "البحر الأحمر", "capital_ar": "الغردقة"},
+    {"code": "EG-32", "nid_code": "32", "name_en": "New Valley", "name_ar": "الوادي الجديد", "capital_ar": "الخارجة"},
+    {"code": "EG-33", "nid_code": "33", "name_en": "Matrouh", "name_ar": "مطروح", "capital_ar": "مرسى مطروح"},
+    {"code": "EG-34", "nid_code": "34", "name_en": "North Sinai", "name_ar": "شمال سيناء", "capital_ar": "العريش"},
+    {"code": "EG-35", "nid_code": "35", "name_en": "South Sinai", "name_ar": "جنوب سيناء", "capital_ar": "الطور"}
+  ]
+}
