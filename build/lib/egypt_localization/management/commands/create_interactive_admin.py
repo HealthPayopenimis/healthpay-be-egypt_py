@@ -113,9 +113,27 @@ class Command(BaseCommand):
             username=username
         )
         core_user.i_user = i_user
+        # An interactive account must NOT also carry a technical user. core's
+        # resolve_users() filters the Users admin page with Q(t_user__isnull=True),
+        # so a row with both is fully entitled everywhere yet invisible on its own
+        # admin page. This happens when `createsuperuser` was run for the same
+        # username first (it sets t_user). Detach it; the TechnicalUser row itself
+        # is left intact for any API/service client that may reference it.
+        detached_t_user = None
+        if core_user.t_user_id:
+            detached_t_user = core_user.t_user_id
+            core_user.t_user = None
         core_user.save()
 
         rights_count = len(i_user.rights or [])
+        if detached_t_user:
+            self.stdout.write(
+                self.style.WARNING(
+                    "  detached technical user %s from '%s' (an account with both "
+                    "i_user and t_user is hidden from the Users admin page)"
+                    % (detached_t_user, username)
+                )
+            )
         self.stdout.write(
             self.style.SUCCESS(
                 "%s interactive user '%s' (InteractiveUser id=%s, core_User id=%s)\n"
