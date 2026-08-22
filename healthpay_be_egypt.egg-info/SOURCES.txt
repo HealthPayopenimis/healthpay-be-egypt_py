@@ -15,6 +15,7 @@ egypt_localization/management/commands/create_interactive_admin.py
 egypt_localization/management/commands/create_interactive_user.py
 egypt_localization/migrations/0001_seed_egypt.py
 egypt_localization/migrations/0002_seed_districts_demo.py
+egypt_localization/migrations/0003_frontend_config.py
 egypt_localization/migrations/__init__.py
 egypt_localization/tests/__init__.py
 egypt_localization/tests/test_signal_binding.py
