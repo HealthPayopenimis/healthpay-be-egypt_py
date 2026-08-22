@@ -4,14 +4,17 @@ README.md
 setup.py
 egypt_localization/__init__.py
 egypt_localization/apps.py
+egypt_localization/signals.py
 egypt_localization/urls.py
 egypt_localization/validators.py
+egypt_localization/fixtures/districts_demo.json
 egypt_localization/fixtures/governorates.json
 egypt_localization/management/__init__.py
 egypt_localization/management/commands/__init__.py
 egypt_localization/management/commands/create_interactive_admin.py
 egypt_localization/management/commands/create_interactive_user.py
 egypt_localization/migrations/0001_seed_egypt.py
+egypt_localization/migrations/0002_seed_districts_demo.py
 egypt_localization/migrations/__init__.py
 egypt_localization/tests/__init__.py
 egypt_localization/tests/test_validators.py

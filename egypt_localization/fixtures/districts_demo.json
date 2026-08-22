@@ -1,0 +1,31 @@
+{
+  "_comment": "DEMO SUBSET — real Egyptian administrative divisions for Cairo and Giza only, sufficient to run Scenario A end to end. This is NOT the national dataset: completing markaz/qism/shiyakha for all 27 governorates requires the CAPMAS administrative register and is tracked as a separate operational task. Nothing here is invented; each entry is a well-established division. Codes are HealthPay-internal (EG-<gov>-<seq>), not official CAPMAS codes, and are marked as such so they are not mistaken for a national coding scheme.",
+  "hierarchy_mapping": {
+    "R": "Governorate — المحافظة",
+    "D": "Markaz / Qism — المركز / القسم",
+    "W": "City / District — المدينة / الحي",
+    "V": "Sheyakha / Village — الشياخة / القرية"
+  },
+  "districts": [
+    {"governorate": "EG-01", "code": "EG-01-D01", "name_ar": "قسم مصر الجديدة", "name_en": "Heliopolis",
+     "wards": [{"code": "EG-01-D01-W01", "name_ar": "مصر الجديدة", "name_en": "Heliopolis",
+                "villages": [{"code": "EG-01-D01-W01-V01", "name_ar": "شياخة الكوربة", "name_en": "Korba"},
+                             {"code": "EG-01-D01-W01-V02", "name_ar": "شياخة روكسي", "name_en": "Roxy"}]}]},
+    {"governorate": "EG-01", "code": "EG-01-D02", "name_ar": "قسم مدينة نصر", "name_en": "Nasr City",
+     "wards": [{"code": "EG-01-D02-W01", "name_ar": "مدينة نصر", "name_en": "Nasr City",
+                "villages": [{"code": "EG-01-D02-W01-V01", "name_ar": "شياخة الحي السابع", "name_en": "7th District"},
+                             {"code": "EG-01-D02-W01-V02", "name_ar": "شياخة الحي العاشر", "name_en": "10th District"}]}]},
+    {"governorate": "EG-01", "code": "EG-01-D03", "name_ar": "قسم المعادي", "name_en": "Maadi",
+     "wards": [{"code": "EG-01-D03-W01", "name_ar": "المعادي", "name_en": "Maadi",
+                "villages": [{"code": "EG-01-D03-W01-V01", "name_ar": "شياخة المعادي الجديدة", "name_en": "New Maadi"}]}]},
+    {"governorate": "EG-21", "code": "EG-21-D01", "name_ar": "قسم الدقي", "name_en": "Dokki",
+     "wards": [{"code": "EG-21-D01-W01", "name_ar": "الدقي", "name_en": "Dokki",
+                "villages": [{"code": "EG-21-D01-W01-V01", "name_ar": "شياخة المساحة", "name_en": "Messaha"}]}]},
+    {"governorate": "EG-21", "code": "EG-21-D02", "name_ar": "قسم العجوزة", "name_en": "Agouza",
+     "wards": [{"code": "EG-21-D02-W01", "name_ar": "العجوزة", "name_en": "Agouza",
+                "villages": [{"code": "EG-21-D02-W01-V01", "name_ar": "شياخة المهندسين", "name_en": "Mohandessin"}]}]},
+    {"governorate": "EG-21", "code": "EG-21-D03", "name_ar": "مركز الهرم", "name_en": "Haram",
+     "wards": [{"code": "EG-21-D03-W01", "name_ar": "الهرم", "name_en": "Haram",
+                "villages": [{"code": "EG-21-D03-W01-V01", "name_ar": "شياخة فيصل", "name_en": "Faisal"}]}]}
+  ]
+}

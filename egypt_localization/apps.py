@@ -8,6 +8,7 @@ DEFAULT_CFG = {
     "default_language": "ar",
     "phone_country_code": "+20",
     "fiscal_year_start_month": 7,  # Egyptian fiscal year: 1 July – 30 June
+    "enforce_national_id": True,
 }
 
 
@@ -26,3 +27,5 @@ class EgyptLocalizationConfig(AppConfig):
         cfg = ModuleConfiguration.get_or_default(MODULE_NAME, DEFAULT_CFG)
         for k, v in cfg.items():
             setattr(EgyptLocalizationConfig, k, v)
+        from egypt_localization.signals import bind_signals
+        bind_signals()
