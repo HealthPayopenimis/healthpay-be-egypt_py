@@ -17,6 +17,7 @@ egypt_localization/migrations/0001_seed_egypt.py
 egypt_localization/migrations/0002_seed_districts_demo.py
 egypt_localization/migrations/__init__.py
 egypt_localization/tests/__init__.py
+egypt_localization/tests/test_signal_binding.py
 egypt_localization/tests/test_validators.py
 healthpay_be_egypt.egg-info/PKG-INFO
 healthpay_be_egypt.egg-info/SOURCES.txt
