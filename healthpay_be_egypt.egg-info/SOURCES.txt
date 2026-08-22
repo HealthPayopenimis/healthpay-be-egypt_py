@@ -10,6 +10,7 @@ egypt_localization/fixtures/governorates.json
 egypt_localization/management/__init__.py
 egypt_localization/management/commands/__init__.py
 egypt_localization/management/commands/create_interactive_admin.py
+egypt_localization/management/commands/create_interactive_user.py
 egypt_localization/migrations/0001_seed_egypt.py
 egypt_localization/migrations/__init__.py
 egypt_localization/tests/__init__.py
