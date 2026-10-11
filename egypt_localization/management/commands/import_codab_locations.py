@@ -28,6 +28,20 @@ from egypt_localization.codab_import import (
 FIXTURE = Path(__file__).resolve().parents[2] / "fixtures" / "codab-staged-candidate.json"
 
 
+def _codab_location_service_class(base_class):
+    """Return the importer-owned service variant with no implicit user-scope writes.
+
+    The deployed LocationService automatically creates UserDistrict rows for newly
+    created districts.  CODAB import must preserve pre-existing operator scopes;
+    this narrow subclass changes no service behavior except that one hook.
+    """
+    class CodabLocationService(base_class):
+        def _ensure_user_belongs_to_district(self, *args, **kwargs):
+            return None
+
+    return CodabLocationService
+
+
 class Command(BaseCommand):
     help = "Dry-run or explicitly apply the pinned COD-AB R/D/V fixture to QA only."
 
@@ -94,6 +108,11 @@ class Command(BaseCommand):
             raise CommandError("Location.json_ext is required to preserve source provenance; no schema change is performed") from exc
 
     @staticmethod
+    def _location_service_class():
+        from location.services import LocationService
+        return _codab_location_service_class(LocationService)
+
+    @staticmethod
     def _inventory(Location):
         # Deliberately includes inactive/historical rows: every code collision is reported.
         fields = ("code", "name", "type", "validity_to", "parent__code")
@@ -136,10 +155,9 @@ class Command(BaseCommand):
 
     @staticmethod
     def _apply(candidate, diff, Location, operator):
-        from location.services import LocationService
         by_code = {row["code"]: row for row in candidate}
         with transaction.atomic():
-            service = LocationService(operator)
+            service = Command._location_service_class()(operator)
             for decision in diff["decisions"]:
                 if decision["outcome"] != "add":
                     continue
