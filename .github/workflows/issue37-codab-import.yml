@@ -1,0 +1,26 @@
+name: issue37-codab-import
+
+on:
+  push:
+    paths:
+      - "egypt_localization/codab_import.py"
+      - "egypt_localization/fixtures/codab-staged-candidate.json"
+      - "egypt_localization/tests/test_codab_import.py"
+      - ".github/workflows/issue37-codab-import.yml"
+  pull_request:
+    paths:
+      - "egypt_localization/codab_import.py"
+      - "egypt_localization/fixtures/codab-staged-candidate.json"
+      - "egypt_localization/tests/test_codab_import.py"
+      - ".github/workflows/issue37-codab-import.yml"
+
+jobs:
+  pure-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run DB-free Issue37 regression tests
+        run: python -m unittest egypt_localization.tests.test_codab_import -v
