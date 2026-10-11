@@ -88,7 +88,7 @@ def validate_candidate(rows: Iterable[Mapping[str, Any]]) -> None:
         seen.add(code)
         if kind not in ALLOWED_TYPES:
             _fail(f"unsupported candidate type {kind!r}; W is never fabricated")
-        if not isinstance(name, str) or not name or len(name) > 100:
+        if not isinstance(name, str) or not name or len(name) > 50:
             _fail(f"invalid candidate Arabic name for {code}")
         if kind == "R":
             if parent is not None:

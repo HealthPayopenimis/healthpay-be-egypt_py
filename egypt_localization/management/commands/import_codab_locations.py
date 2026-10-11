@@ -53,6 +53,7 @@ class Command(BaseCommand):
             operator = self._operator(options["username"])
             self._apply(candidate, report["diff"], Location, operator)
             report["status"] = "APPLIED"
+            report["database_mutation"] = any(report["diff"]["counts"]["add"].values())
         else:
             report["status"] = "DRY_RUN"
         self._write_report(options["report"], report)
@@ -155,12 +156,13 @@ class Command(BaseCommand):
                     raise CommandError(f"concurrent code collision for {row['code']}; transaction rolled back")
                 data = {
                     "code": row["code"], "name": row["name"], "type": row["type"],
-                    "parent": parent, "parent_id": getattr(parent, "id", None),
                     "json_ext": {OWNED_PROVENANCE_KEY: provenance(row)},
                     "validity_to": None, "audit_user_id": getattr(operator, "id_for_audit", operator.id),
                 }
+                if parent is not None:
+                    data["parent_uuid"] = str(parent.uuid)
                 # This is the sole write path.  No model .create(), save(), or raw SQL.
-                service.update_or_create(data, operator)
+                service.update_or_create(data)
 
     @staticmethod
     def _write_report(path: Path, report: dict[str, Any]):
